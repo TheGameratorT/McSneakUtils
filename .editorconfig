@@ -1,0 +1,17 @@
+root = true
+
+[*.md]
+end_of_line = lf
+insert_final_newline = true
+
+[*.java]
+indent_style = tab
+indent_size = 4
+end_of_line = lf
+insert_final_newline = true
+
+[src/main/resources/**.json]
+indent_style = tab
+indent_size = 2
+end_of_line = lf
+insert_final_newline = true

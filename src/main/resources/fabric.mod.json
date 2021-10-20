@@ -1,0 +1,36 @@
+{
+	"schemaVersion": 1,
+	"id": "sneakutils",
+	"version": "${version}",
+	"name": "Sneak Utils",
+	"description": "Some sneaky stuff ;)\nAllows for different sneaking configurations per world/server.",
+	"authors": [
+		"TheGameratorT"
+	],
+	"contributors": [
+		"Arcayn",
+		"ItzTacos"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/sneak-utils",
+		"sources": "https://github.com/TheGameratorT/McSneakUtils"
+	},
+	"license": "LGPL-3.0-only",
+	"icon": "assets/sneakutils/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"com.thegameratort.sneakutils.SneakUtils"
+		],
+		"modmenu": [
+			"com.thegameratort.sneakutils.config.ModMenuIntegration"
+		]
+	},
+	"mixins": [
+		"sneakutils.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.11.7",
+		"minecraft": ">=1.17-"
+	}
+}

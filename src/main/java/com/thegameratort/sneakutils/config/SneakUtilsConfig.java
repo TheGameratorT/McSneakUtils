@@ -1,0 +1,22 @@
+package com.thegameratort.sneakutils.config;
+
+import com.thegameratort.sneakutils.gui.ConfigFloatBounds;
+
+public class SneakUtilsConfig {
+	public boolean legacySneak = false;
+	public boolean legacySneakPosOff = false;
+	public boolean noLedgeClipping = false;
+	public CameraLerpMode cameraLerpMode = CameraLerpMode.DEFAULT_STEP;
+	@ConfigFloatBounds(min=0.0F, max=100.0F)
+	public float cameraLerpDuration = 20.0F;
+
+	public SneakUtilsConfig() {}
+
+	public SneakUtilsConfig(SneakUtilsConfig other) {
+		this.legacySneak = other.legacySneak;
+		this.legacySneakPosOff = other.legacySneakPosOff;
+		this.noLedgeClipping = other.noLedgeClipping;
+		this.cameraLerpMode = other.cameraLerpMode;
+		this.cameraLerpDuration = other.cameraLerpDuration;
+	}
+}

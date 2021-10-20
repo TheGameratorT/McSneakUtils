@@ -1,0 +1,22 @@
+//de_de
+  "text.sneakutils.plsjoingame": "Bitte trete einer Welt/einem Server bei bevor du die Einstellungen änderst",
+
+//en_us
+  "text.sneakutils.plsjoingame": "Please join a world/server before changing the options.",
+  "text.sneakutils.option.instantSneak": "Instant sneak",
+  "text.sneakutils.option.cameraSneakSpeed": "Camera sneak speed",
+
+//it_it
+  "text.sneakutils.plsjoingame": "Perfavore entra in un mondo/server prima di cambiare le opzioni.",
+  "text.sneakutils.option.instantSneak": "Sneak instantaneo",
+  "text.sneakutils.option.cameraSneakSpeed": "Velocità sneak della camera",
+
+//pt_br
+  "text.sneakutils.plsjoingame": "Por favor entre num mundo/servidor antes de alterar as opções.",
+  "text.sneakutils.option.instantSneak": "Agachamento instantâneo",
+  "text.sneakutils.option.cameraSneakSpeed": "Velocidade de agachamento da câmara",
+
+//pt_pt
+  "text.sneakutils.plsjoingame": "Por favor entre num mundo/servidor antes de alterar as opções.",
+  "text.sneakutils.option.instantSneak": "Agachamento instantâneo",
+  "text.sneakutils.option.cameraSneakSpeed": "Velocidade de agachamento da câmara",
