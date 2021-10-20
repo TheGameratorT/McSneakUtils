@@ -14,7 +14,7 @@
   "option.sneakutils.tooltip.legacySneakPosOff": "Quando ti accovacci le gambe del giocatore non andranno sotto il blocco. (solo visuale)",
   "option.sneakutils.tooltip.noLedgeClipping": "Lascia cadere il giocatore dai bordi del blocco anche se è accovacciato.",
   "option.sneakutils.tooltip.cameraLerpMode": "La funzione che verrà utilizzata per il movimento della visuale durante l'accovacciamento.",
-  "option.sneakutils.tooltip.cameraLerpDuration": "Quanto tempo impiegherà l'interpolazione della visuale durante l'accovacciament.o",
+  "option.sneakutils.tooltip.cameraLerpDuration": "Quanto tempo impiegherà l'interpolazione della visuale durante l'accovacciamento.",
   "enum.sneakutils.CameraLerpMode.LINEAR": "Lineare",
   "enum.sneakutils.CameraLerpMode.SMOOTH_STEP": "Smooth Step",
   "enum.sneakutils.CameraLerpMode.SMOOTHER_STEP": "Smoother Step",
