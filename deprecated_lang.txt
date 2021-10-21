@@ -1,22 +1,25 @@
 //de_de
   "text.sneakutils.plsjoingame": "Bitte trete einer Welt/einem Server bei bevor du die Einstellungen änderst",
+  "option.sneakutils.legacySneak": "Alte Schleichhöhe",
+  "option.sneakutils.tooltip.legacySneak": "Beim Schleichen alte Spielerhöhe verwenden",
 
 //en_us
   "text.sneakutils.plsjoingame": "Please join a world/server before changing the options.",
   "text.sneakutils.option.instantSneak": "Instant sneak",
   "text.sneakutils.option.cameraSneakSpeed": "Camera sneak speed",
+  "option.sneakutils.legacySneak": "Legacy sneak dimensions",
+  "option.sneakutils.tooltip.legacySneak": "When sneaking use the old player height",
 
 //it_it
   "text.sneakutils.plsjoingame": "Perfavore entra in un mondo/server prima di cambiare le opzioni.",
   "text.sneakutils.option.instantSneak": "Sneak instantaneo",
   "text.sneakutils.option.cameraSneakSpeed": "Velocità sneak della camera",
+  "option.sneakutils.legacySneak": "Dimensioni del vecchio accovacciamento",
+  "option.sneakutils.tooltip.legacySneak": "Quando ti accovacci usa la vecchia posizione del giocatore",
 
-//pt_br
+//pt_br & pt_pt
   "text.sneakutils.plsjoingame": "Por favor entre num mundo/servidor antes de alterar as opções.",
   "text.sneakutils.option.instantSneak": "Agachamento instantâneo",
   "text.sneakutils.option.cameraSneakSpeed": "Velocidade de agachamento da câmara",
-
-//pt_pt
-  "text.sneakutils.plsjoingame": "Por favor entre num mundo/servidor antes de alterar as opções.",
-  "text.sneakutils.option.instantSneak": "Agachamento instantâneo",
-  "text.sneakutils.option.cameraSneakSpeed": "Velocidade de agachamento da câmara",
+  "option.sneakutils.legacySneak": "Dimensões antigas ao agachar",
+  "option.sneakutils.tooltip.legacySneak": "Ao agachar usar a altura antiga do jogador",
