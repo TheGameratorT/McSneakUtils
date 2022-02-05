@@ -57,7 +57,7 @@ public class SneakUtilsConfigScreen {
 				null/*() -> Optional.of(new Text[]{new TranslatableText("option.sneakutils.tooltip.defaultConfig")})*/,
 				() -> {
 					MinecraftClient client = MinecraftClient.getInstance();
-					client.openScreen(getDefault(parent));
+					client.setScreen(getDefault(parent));
 				}
 			);
 			options.addEntry(switchConfigBtnEntry);
@@ -77,7 +77,7 @@ public class SneakUtilsConfigScreen {
 					null/*() -> Optional.of(new Text[]{new TranslatableText("option.sneakutils.tooltip.currentConfig")})*/,
 					() -> {
 						MinecraftClient client = MinecraftClient.getInstance();
-						client.openScreen(getCurrent(parent));
+						client.setScreen(getCurrent(parent));
 					}
 				);
 				options.addEntry(switchConfigBtnEntry);
