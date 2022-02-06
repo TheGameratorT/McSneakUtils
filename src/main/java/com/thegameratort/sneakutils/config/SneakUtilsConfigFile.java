@@ -40,6 +40,10 @@ public class SneakUtilsConfigFile {
 			} catch (IOException ex) {
 				throw new RuntimeException("Could not parse config", ex);
 			}
+			if (config.sneakMode == null) {
+				config.sneakMode = SneakMode.LATEST;
+				logger.warn("[Sneak Utils] Invalid sneak mode defaulted to LATEST!");
+			}
 			if (config.cameraLerpMode == null) {
 				config.cameraLerpMode = CameraLerpMode.DEFAULT_STEP;
 				logger.warn("[Sneak Utils] Invalid camera lerp mode defaulted to DEFAULT_STEP!");

@@ -3,7 +3,7 @@ package com.thegameratort.sneakutils.config;
 import com.thegameratort.sneakutils.gui.ConfigFloatBounds;
 
 public class SneakUtilsConfig {
-	public SneakMode sneakMode = SneakMode.v1_17;
+	public SneakMode sneakMode = SneakMode.LATEST;
 	public boolean legacySneakPosOff = false;
 	public boolean noLedgeClipping = false;
 	public CameraLerpMode cameraLerpMode = CameraLerpMode.DEFAULT_STEP;

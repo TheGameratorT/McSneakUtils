@@ -7,11 +7,12 @@ import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityPose;
 import net.minecraft.entity.player.PlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(PlayerEntity.class)
+@Mixin(value = PlayerEntity.class, priority = 1100)
 public abstract class PlayerEntityMixin {
 	private static final EntityDimensions SNEAKING_DIMENSIONS_v1_13 = EntityDimensions.changing(0.6F, 1.65F);
 
@@ -39,7 +40,7 @@ public abstract class PlayerEntityMixin {
 	private void getActiveEyeHeight_hook(EntityPose pose, EntityDimensions dimensions, CallbackInfoReturnable<Float> cir) {
 		if (pose == EntityPose.CROUCHING) {
 			SneakUtilsConfig config = SneakUtils.getConfig();
-			if (config.sneakMode != SneakMode.v1_17) {
+			if (config.sneakMode != SneakMode.LATEST) {
 				cir.setReturnValue(1.54F);
 			}
 		}
