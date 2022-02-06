@@ -1,10 +1,6 @@
 package com.thegameratort.sneakutils.gui;
 
 import com.google.common.collect.Lists;
-import java.util.List;
-import java.util.Optional;
-import java.util.function.Supplier;
-
 import me.shedaniel.clothconfig2.gui.entries.TooltipListEntry;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -17,6 +13,10 @@ import net.minecraft.client.util.NarratorManager;
 import net.minecraft.client.util.Window;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.function.Supplier;
 
 @Environment(EnvType.CLIENT)
 public class ButtonListEntry extends TooltipListEntry<Boolean> {
