@@ -22,6 +22,6 @@
 	"enum.sneakutils.CameraLerpMode.INSTANT": "Direkt",
 	"enum.sneakutils.SneakMode.v1_8": "<= 1.8.9",
 	"enum.sneakutils.SneakMode.v1_13": "<= 1.13.2",
-	"enum.sneakutils.SneakMode.LATEST": "<= 1.18.1",
+	"enum.sneakutils.SneakMode.LATEST": "<= 1.18.2",
 	"modmenu.descriptionTranslation.sneakutils": "Sneaky Zeugs ;)\nErlaubt verschiedene Schleichkonfigurationen pro Welt/Server"
 }
