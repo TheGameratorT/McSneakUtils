@@ -20,8 +20,8 @@
   "enum.sneakutils.CameraLerpMode.SMOOTHER_STEP": "Smoother Step",
   "enum.sneakutils.CameraLerpMode.DEFAULT_STEP": "Default Step",
   "enum.sneakutils.CameraLerpMode.INSTANT": "Instantanea",
-	"enum.sneakutils.SneakMode.v1_8": "<= 1.8.9",
-	"enum.sneakutils.SneakMode.v1_13": "<= 1.13.2",
-	"enum.sneakutils.SneakMode.LATEST": "<= 1.18.2",
+	"enum.sneakutils.SneakMode.v1_8": "≤ 1.8.9",
+	"enum.sneakutils.SneakMode.v1_13": "≤ 1.13.2",
+	"enum.sneakutils.SneakMode.LATEST": "≤ 1.19",
   "modmenu.descriptionTranslation.sneakutils": "Permette diverse configurazioni dell'accovacciamento per mondo/server."
 }

@@ -20,8 +20,8 @@
 	"enum.sneakutils.CameraLerpMode.SMOOTHER_STEP": "Glätter",
 	"enum.sneakutils.CameraLerpMode.DEFAULT_STEP": "Standard",
 	"enum.sneakutils.CameraLerpMode.INSTANT": "Direkt",
-	"enum.sneakutils.SneakMode.v1_8": "<= 1.8.9",
-	"enum.sneakutils.SneakMode.v1_13": "<= 1.13.2",
-	"enum.sneakutils.SneakMode.LATEST": "<= 1.18.2",
+	"enum.sneakutils.SneakMode.v1_8": "≤ 1.8.9",
+	"enum.sneakutils.SneakMode.v1_13": "≤ 1.13.2",
+	"enum.sneakutils.SneakMode.LATEST": "≤ 1.19",
 	"modmenu.descriptionTranslation.sneakutils": "Sneaky Zeugs ;)\nErlaubt verschiedene Schleichkonfigurationen pro Welt/Server"
 }

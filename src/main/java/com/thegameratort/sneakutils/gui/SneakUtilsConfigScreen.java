@@ -10,8 +10,7 @@ import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
 import me.shedaniel.clothconfig2.impl.builders.*;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.text.LiteralText;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.Text;
 import net.minecraft.util.Language;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -44,16 +43,16 @@ public class SneakUtilsConfigScreen {
 
 		ConfigBuilder builder = ConfigBuilder.create()
 			.setParentScreen(parent)
-			.setTitle(new TranslatableText("text.sneakutils.title"));
+			.setTitle(Text.translatable("text.sneakutils.title"));
 
 		ConfigEntryBuilder entryBuilder = builder.entryBuilder();
 
-		ConfigCategory options = builder.getOrCreateCategory(LiteralText.EMPTY);
+		ConfigCategory options = builder.getOrCreateCategory(Text.empty());
 
 		if (isCurrent) {
 			ButtonListEntry switchConfigBtnEntry = new ButtonListEntry(
-				new TranslatableText("option.sneakutils.defaultConfig"),
-				new TranslatableText("text.sneakutils.edit"),
+				Text.translatable("option.sneakutils.defaultConfig"),
+				Text.translatable("text.sneakutils.edit"),
 				null/*() -> Optional.of(new Text[]{new TranslatableText("option.sneakutils.tooltip.defaultConfig")})*/,
 				() -> {
 					MinecraftClient client = MinecraftClient.getInstance();
@@ -65,15 +64,15 @@ public class SneakUtilsConfigScreen {
 			String entryText = Language.getInstance()
 				.get("option.sneakutils.currentConfigSeparator")
 				.formatted(configManager.getCurrentWorldName());
-			options.addEntry(new SeparatorListEntry(new LiteralText(entryText)));
+			options.addEntry(new SeparatorListEntry(Text.literal(entryText)));
 		} else {
 			if (configManager.isConfigLoaded()) {
 				String entryText = Language.getInstance()
 					.get("option.sneakutils.currentConfig")
 					.formatted(configManager.getCurrentWorldName());
 				ButtonListEntry switchConfigBtnEntry = new ButtonListEntry(
-					new LiteralText(entryText),
-					new TranslatableText("text.sneakutils.edit"),
+					Text.literal(entryText),
+					Text.translatable("text.sneakutils.edit"),
 					null/*() -> Optional.of(new Text[]{new TranslatableText("option.sneakutils.tooltip.currentConfig")})*/,
 					() -> {
 						MinecraftClient client = MinecraftClient.getInstance();
@@ -82,7 +81,7 @@ public class SneakUtilsConfigScreen {
 				);
 				options.addEntry(switchConfigBtnEntry);
 			}
-			options.addEntry(new SeparatorListEntry(new TranslatableText("option.sneakutils.defaultConfigSeparator")));
+			options.addEntry(new SeparatorListEntry(Text.translatable("option.sneakutils.defaultConfigSeparator")));
 		}
 
 		Field[] fields = SneakUtilsConfig.class.getFields();
@@ -116,8 +115,8 @@ public class SneakUtilsConfigScreen {
 			return;
 		}
 		String key = field.getName();
-		BooleanToggleBuilder btb = entryBuilder.startBooleanToggle(new TranslatableText("option.sneakutils." + key), value);
-		btb.setTooltip(new TranslatableText("option.sneakutils.tooltip." + key));
+		BooleanToggleBuilder btb = entryBuilder.startBooleanToggle(Text.translatable("option.sneakutils." + key), value);
+		btb.setTooltip(Text.translatable("option.sneakutils.tooltip." + key));
 		btb.setDefaultValue(defValue);
 		btb.setSaveConsumer(newValue -> {
 			try {
@@ -139,8 +138,8 @@ public class SneakUtilsConfigScreen {
 			return;
 		}
 		String key = field.getName();
-		FloatFieldBuilder ffb = entryBuilder.startFloatField(new TranslatableText("option.sneakutils." + key), value);
-		ffb.setTooltip(new TranslatableText("option.sneakutils.tooltip." + key));
+		FloatFieldBuilder ffb = entryBuilder.startFloatField(Text.translatable("option.sneakutils." + key), value);
+		ffb.setTooltip(Text.translatable("option.sneakutils.tooltip." + key));
 		ffb.setDefaultValue(defValue);
 		ffb.setSaveConsumer(newValue -> {
 			try {
@@ -167,8 +166,8 @@ public class SneakUtilsConfigScreen {
 			return;
 		}
 		String key = field.getName();
-		IntFieldBuilder ifb = entryBuilder.startIntField(new TranslatableText("option.sneakutils." + key), value);
-		ifb.setTooltip(new TranslatableText("option.sneakutils.tooltip." + key));
+		IntFieldBuilder ifb = entryBuilder.startIntField(Text.translatable("option.sneakutils." + key), value);
+		ifb.setTooltip(Text.translatable("option.sneakutils.tooltip." + key));
 		ifb.setDefaultValue(defValue);
 		ifb.setSaveConsumer(newValue -> {
 			try {
@@ -195,8 +194,8 @@ public class SneakUtilsConfigScreen {
 			return;
 		}
 		String key = field.getName();
-		LongFieldBuilder lfb = entryBuilder.startLongField(new TranslatableText("option.sneakutils." + key), value);
-		lfb.setTooltip(new TranslatableText("option.sneakutils.tooltip." + key));
+		LongFieldBuilder lfb = entryBuilder.startLongField(Text.translatable("option.sneakutils." + key), value);
+		lfb.setTooltip(Text.translatable("option.sneakutils.tooltip." + key));
 		lfb.setDefaultValue(defValue);
 		lfb.setSaveConsumer(newValue -> {
 			try {
@@ -244,13 +243,13 @@ public class SneakUtilsConfigScreen {
 		}
 
 		DropdownMenuBuilder<String> dmb = entryBuilder.startDropdownMenu(
-			new TranslatableText("option.sneakutils." + key),
+			Text.translatable("option.sneakutils." + key),
 			DropdownMenuBuilder.TopCellElementBuilder.of(
 				enumDisplayNames.get(constants.indexOf(value)),
 				str -> enumDisplayNames.contains(str) ? str : null
 			)
 		);
-		dmb.setTooltip(new TranslatableText("option.sneakutils.tooltip." + key));
+		dmb.setTooltip(Text.translatable("option.sneakutils.tooltip." + key));
 		dmb.setDefaultValue(() -> enumDisplayNames.get(constants.indexOf(defValue)));
 		dmb.setSelections(enumDisplayNames);
 		dmb.setSaveConsumer(newValue -> {

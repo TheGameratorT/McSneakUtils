@@ -22,6 +22,6 @@
   "enum.sneakutils.CameraLerpMode.INSTANT": "Без сглаживания",
   "enum.sneakutils.SneakMode.v1_8": "≤ 1.8.9",
   "enum.sneakutils.SneakMode.v1_13": "≤ 1.13.2",
-  "enum.sneakutils.SneakMode.LATEST": "≤ 1.18.2",
+  "enum.sneakutils.SneakMode.LATEST": "≤ 1.19",
   "modmenu.descriptionTranslation.sneakutils": "Крадучие штучки ;)\nПозволяет настраивать механики приседания для каждого мира/сервера."
 }
