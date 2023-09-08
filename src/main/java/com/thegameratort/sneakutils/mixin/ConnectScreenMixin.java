@@ -14,8 +14,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ConnectScreen.class)
 public abstract class ConnectScreenMixin {
-	@Inject(method = "connect(Lnet/minecraft/client/gui/screen/Screen;Lnet/minecraft/client/MinecraftClient;Lnet/minecraft/client/network/ServerAddress;Lnet/minecraft/client/network/ServerInfo;)V", at = @At("TAIL"))
-	private static void connect_hook(Screen screen, MinecraftClient client, ServerAddress address, ServerInfo info, CallbackInfo ci) {
+	@Inject(method = "connect(Lnet/minecraft/client/MinecraftClient;Lnet/minecraft/client/network/ServerAddress;Lnet/minecraft/client/network/ServerInfo;)V", at = @At("TAIL"))
+	private void connect_hook(MinecraftClient client, ServerAddress address, ServerInfo info, CallbackInfo ci) {
 		SneakUtilsConfigManager configManager = SneakUtils.getConfigManager();
 		configManager.loadConfig("servers", info.address);
 		configManager.setCurrentWorldName(info.address);
