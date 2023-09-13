@@ -15,7 +15,8 @@ Allows for different sneaking configurations per world/server.
 ## Special thanks
  - Arcayn (German translation and default step function)
  - ItzTacos (Italian translation)
-- Felix14-v2 (Italian translation)
+ - Felix14-v2 (Russian translation)
+ - 0xallie (1.20.1 update)
 
 ## Preview
 ![preview](https://raw.githubusercontent.com/TheGameratorT/McSneakUtils/main/src-img/preview.jpg)
