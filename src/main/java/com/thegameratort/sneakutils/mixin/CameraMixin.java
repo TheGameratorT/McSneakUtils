@@ -5,6 +5,7 @@ import com.thegameratort.sneakutils.config.CameraLerpMode;
 import com.thegameratort.sneakutils.config.SneakUtilsConfig;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.Camera;
+import net.minecraft.client.render.RenderTickCounter;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 import org.spongepowered.asm.mixin.Mixin;
@@ -29,7 +30,7 @@ public abstract class CameraMixin {
 	@Shadow private float cameraY;
 	@Shadow private float lastCameraY;
 
-	private MinecraftClient client;
+	private RenderTickCounter renderTickCounter;
 	private float lerpTime;
 	private float lerpStartCameraY;
 	private float lerpEndCameraY;
@@ -38,7 +39,7 @@ public abstract class CameraMixin {
 
 	@Inject(method = "<init>()V", at = @At("TAIL"))
 	private void init_hook(CallbackInfo ci) {
-		this.client = MinecraftClient.getInstance();
+		this.renderTickCounter = MinecraftClient.getInstance().getRenderTickCounter();
 		this.isLerping = false;
 	}
 
@@ -58,7 +59,7 @@ public abstract class CameraMixin {
         /*if (config.cameraLerpMode == CameraLerpMode.DEFAULT) {
             return MathHelper.lerp(delta, start, end);
         }*/
-		updateLerp(client.getLastFrameDuration());
+		updateLerp(renderTickCounter.getLastFrameDuration());
 		return this.cameraY;
 	}
 
