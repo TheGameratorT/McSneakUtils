@@ -13,35 +13,35 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(PlayerEntity.class)
 public abstract class PlayerEntityMixin {
-	private static final EntityDimensions SNEAKING_DIMENSIONS_v1_13 = EntityDimensions.changing(0.6F, 1.65F);
+	private static final float SNEAKING_HEIGHT_v1_8 = 1.8F;
+	private static final float SNEAKING_HEIGHT_v1_13 = 1.65F;
+	private static final float SNEAKING_EYEHEIGHT_LEGACY = 1.54F;
 
 	@Inject(
-		method = "getDimensions(Lnet/minecraft/entity/EntityPose;)Lnet/minecraft/entity/EntityDimensions;",
-		at = @At("HEAD"),
+		method = "getBaseDimensions(Lnet/minecraft/entity/EntityPose;)Lnet/minecraft/entity/EntityDimensions;",
+		at = @At("TAIL"),
 		cancellable = true
 	)
-	private void getDimensions_hook(EntityPose pose, CallbackInfoReturnable<EntityDimensions> cir) {
+	private void getBaseDimensions_hook(EntityPose pose, CallbackInfoReturnable<EntityDimensions> cir) {
 		if (pose == EntityPose.CROUCHING) {
+			EntityDimensions resultDimensions = cir.getReturnValue();
 			SneakUtilsConfig config = SneakUtils.getConfig();
-			if (config.sneakMode == SneakMode.v1_8) {
-				cir.setReturnValue(PlayerEntity.STANDING_DIMENSIONS);
-			} else if (config.sneakMode == SneakMode.v1_13) {
-				cir.setReturnValue(SNEAKING_DIMENSIONS_v1_13);
-			}
-		}
-	}
 
-	@Inject(
-		method = "getActiveEyeHeight(Lnet/minecraft/entity/EntityPose;Lnet/minecraft/entity/EntityDimensions;)F",
-		at = @At("HEAD"),
-		cancellable = true
-	)
-	private void getActiveEyeHeight_hook(EntityPose pose, EntityDimensions dimensions, CallbackInfoReturnable<Float> cir) {
-		if (pose == EntityPose.CROUCHING) {
-			SneakUtilsConfig config = SneakUtils.getConfig();
-			if (config.sneakMode != SneakMode.LATEST) {
-				cir.setReturnValue(1.54F);
+			float height;
+			switch (config.sneakMode) {
+				case v1_8 -> height = SNEAKING_HEIGHT_v1_8;
+				case v1_13 -> height = SNEAKING_HEIGHT_v1_13;
+				default -> height = resultDimensions.height();
 			}
+
+			float eyeHeight = config.sneakMode == SneakMode.LATEST ?
+				resultDimensions.eyeHeight() : SNEAKING_EYEHEIGHT_LEGACY;
+
+			EntityDimensions modifiedDimensions = new EntityDimensions(
+				resultDimensions.width(), height, eyeHeight,
+				resultDimensions.attachments(), resultDimensions.fixed());
+
+			cir.setReturnValue(modifiedDimensions);
 		}
 	}
 

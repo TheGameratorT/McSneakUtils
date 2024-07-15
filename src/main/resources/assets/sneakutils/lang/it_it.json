@@ -22,6 +22,6 @@
   "enum.sneakutils.CameraLerpMode.INSTANT": "Instantanea",
 	"enum.sneakutils.SneakMode.v1_8": "≤ 1.8.9",
 	"enum.sneakutils.SneakMode.v1_13": "≤ 1.13.2",
-	"enum.sneakutils.SneakMode.LATEST": "≤ 1.20.1",
+	"enum.sneakutils.SneakMode.LATEST": "Più recente",
   "modmenu.descriptionTranslation.sneakutils": "Permette diverse configurazioni dell'accovacciamento per mondo/server."
 }
