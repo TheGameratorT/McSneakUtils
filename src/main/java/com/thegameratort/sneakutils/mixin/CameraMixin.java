@@ -48,7 +48,7 @@ public abstract class CameraMixin {
 		at = @At(
 			value = "INVOKE",
 			target = "Lnet/minecraft/util/math/MathHelper;lerp(FFF)F",
-			ordinal = 0
+			ordinal = 1
 		)
 	)
 	private float cameraHeightLerp_hook(float delta, float start, float end) {
